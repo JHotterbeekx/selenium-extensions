@@ -1,6 +1,7 @@
 ﻿using System.IO;
 using FluentAssertions;
 using NUnit.Framework;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 
 namespace SeleniumExtensions.Tests {
@@ -14,6 +15,12 @@ namespace SeleniumExtensions.Tests {
       _Driver = new ChromeDriver();
       var workingDirectory = Path.GetDirectoryName(typeof(WebElementExtensionsTests).Assembly.Location);
       _Driver.Navigate().GoToUrl($"file:///{workingDirectory}/TestPages/WebElementExtensionsTests.html");
+    }
+
+    [OneTimeTearDown]
+    public void OneTimeTearDown() {
+      _Driver.Close();
+      _Driver.Dispose();
     }
 
     [SetUp]
@@ -37,25 +44,28 @@ namespace SeleniumExtensions.Tests {
     }
 
     [Test]
-    public void Class_ShouldReturnTrue_WhenClassExistsInElement() {
+    public void HasClass_ShouldReturnTrue_WhenClassExistsInElement() {
       _Driver.FindElementById("testElementClass").HasClass("class2").Should().BeTrue();
     }
 
     [Test]
-    public void Class_ShouldReturnFalse_WhenClassDoesNotExistInElement() {
+    public void HasClass_ShouldReturnFalse_WhenClassDoesNotExistInElement() {
       _Driver.FindElementById("testElementClass").HasClass("class4").Should().BeFalse();
     }
 
     [Test]
-    public void Class_ShouldReturnFalse_WhenStringOnlyMatchesPartOfAClassName() {
+    public void HasClass_ShouldReturnFalse_WhenStringOnlyMatchesPartOfAClassName() {
       _Driver.FindElementById("testElementClass").HasClass("class").Should().BeFalse();
     }
 
-    [OneTimeTearDown]
-    public void OneTimeTearDown() {
-      _Driver.Close();
-      _Driver.Dispose();
+    [Test]
+    public void FindElementIfExists_ShouldReturnElement_WhenElementExists() {
+      _Driver.FindElementById("root").FindElementIfExists(By.Id("testElementFindElementIfExists")).Should().NotBeNull();
     }
 
+    [Test]
+    public void FindElementIfExists_ShouldReturnNull_WhenElementExists() {
+      _Driver.FindElementById("root").FindElementIfExists(By.Id("NonExistingElement")).Should().BeNull();
+    }
   }
 }
