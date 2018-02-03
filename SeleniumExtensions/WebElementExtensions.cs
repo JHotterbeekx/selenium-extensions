@@ -8,7 +8,7 @@ namespace SeleniumExtensions {
     }
 
     public static string OuterHtml(this IWebElement element) {
-      return element.GetAttribute("OuterHtml");
+      return element.GetAttribute("outerHTML");
     }
 
     public static string InnerText(this IWebElement element) {
