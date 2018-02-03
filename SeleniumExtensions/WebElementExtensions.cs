@@ -24,12 +24,8 @@ namespace SeleniumExtensions {
     }
 
     public static IWebElement FindElementIfExists(this IWebElement element, By selector) {
-      try {
-        return element.FindElement(selector);
-      }
-      catch (NoSuchElementException) {
-        return null;
-      }
+      try { return element.FindElement(selector); }
+      catch (NoSuchElementException) { return null; }
     }
 
   }

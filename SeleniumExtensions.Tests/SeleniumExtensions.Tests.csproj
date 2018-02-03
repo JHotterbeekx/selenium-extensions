@@ -60,12 +60,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RemoteWebDriverExtensionsTests.cs" />
     <Compile Include="WebElementExtensionsTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="TestPages\RemoteWebDriverExtensionsTests.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="TestPages\WebElementExtensionsTests.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="root">
+        <button id="waitForElementToShowDelayTrigger">Wait for element to show</button> <span id="waitForElementToShowDelay" style="display: none">Content</span>
+        <button id="waitForElementToShowTooLongDelayTrigger">Wait for element to show</button> <span id="waitForElementToShowTooLongDelay" style="display: none">Content</span>
+        <button id="waitForElementToShowNoDelayTrigger">Wait for element to show</button> <span id="waitForElementToShowNoDelay" style="display: none">Content</span>
+    </div>
+
+<script type="text/javascript">
+    $("#waitForElementToShowDelayTrigger").click(() => setTimeout(() => $('#waitForElementToShowDelay').show(), 1000));
+    $("#waitForElementToShowTooLongDelayTrigger").click(() => setTimeout(() => $('#waitForElementToShowTooLongDelay').show(), 3000));
+    $("#waitForElementToShowNoDelayTrigger").click(() => $('#waitForElementToShowNoDelay').show());
+</script>
+</body>
+</html>
