@@ -3,6 +3,7 @@ using OpenQA.Selenium;
 
 namespace SeleniumExtensions {
   public static class WebElementExtensions {
+
     public static string InnerHtml(this IWebElement element) {
       return element.GetAttribute("innerHTML");
     }
@@ -22,8 +23,6 @@ namespace SeleniumExtensions {
     public static bool HasClass(this IWebElement element, string className) {
       return element.GetAttribute("class")?.Split(' ').Contains(className) ?? false;
     }
-
-    
 
   }
 }
