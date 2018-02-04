@@ -57,15 +57,5 @@ namespace SeleniumExtensions.Tests {
     public void HasClass_ShouldReturnFalse_WhenStringOnlyMatchesPartOfAClassName() {
       _Driver.FindElementById("testElementClass").HasClass("class").Should().BeFalse();
     }
-
-    [Test]
-    public void FindElementIfExists_ShouldReturnElement_WhenElementExists() {
-      _Driver.FindElementById("root").FindElementIfExists(By.Id("testElementFindElementIfExists")).Should().NotBeNull();
-    }
-
-    [Test]
-    public void FindElementIfExists_ShouldReturnNull_WhenElementExists() {
-      _Driver.FindElementById("root").FindElementIfExists(By.Id("NonExistingElement")).Should().BeNull();
-    }
   }
 }

@@ -23,10 +23,7 @@ namespace SeleniumExtensions {
       return element.GetAttribute("class")?.Split(' ').Contains(className) ?? false;
     }
 
-    public static IWebElement FindElementIfExists(this IWebElement element, By selector) {
-      try { return element.FindElement(selector); }
-      catch (NoSuchElementException) { return null; }
-    }
+    
 
   }
 }
