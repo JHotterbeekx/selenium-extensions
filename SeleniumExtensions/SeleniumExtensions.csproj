@@ -2,6 +2,21 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageId>Selenium.Extensions</PackageId>
+    <Version>0.0.1</Version>
+    <Authors>John Hotterbeekx</Authors>
+    <Company />
+    <Product>Selenium Extensions</Product>
+    <Description>This package contains various extension methods for the Selenium.Webdriver NuGet package to make interacting with the browser easier and more natural.</Description>
+    <Copyright>John Hotterbeekx</Copyright>
+    <RepositoryUrl>https://github.com/JHotterbeekx/selenium-extensions</RepositoryUrl>
+    <PackageTags>Selenium</PackageTags>
+    <PackageIconUrl>https://avatars0.githubusercontent.com/u/3214419?s=460&amp;v=4</PackageIconUrl>
+    <PackageProjectUrl>https://github.com/JHotterbeekx/selenium-extensions</PackageProjectUrl>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/JHotterbeekx/selenium-extensions/master/LICENSE</PackageLicenseUrl>
+    <RepositoryType>Github</RepositoryType>
   </PropertyGroup>
 
   <ItemGroup>
