@@ -4,12 +4,14 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <PackageId>Selenium.Extensions</PackageId>
+    <PackageId>Selenium.Extension.Collection</PackageId>
     <Version>0.0.1</Version>
     <Authors>John Hotterbeekx</Authors>
     <Company />
-    <Product>Selenium Extensions</Product>
-    <Description>This package contains various extension methods for the Selenium.Webdriver NuGet package to make interacting with the browser easier and more natural.</Description>
+    <Product>Selenium Extension Collection</Product>
+    <Title>Selenium Extension Collection</Title>
+    <Description>Various extension methods for the Selenium.Webdriver to make interacting with the browser easier and more natural.</Description>
+    <Summary>Various extension methods for the Selenium.Webdriver to make interacting with the browser easier and more natural.</Summary>
     <Copyright>John Hotterbeekx</Copyright>
     <RepositoryUrl>https://github.com/JHotterbeekx/selenium-extensions</RepositoryUrl>
     <PackageTags>Selenium</PackageTags>

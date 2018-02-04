@@ -3,7 +3,7 @@ This package contains various extension methods for the Selenium.Webdriver NuGet
 
 # Installation
 
-Add the NuGet package 'Selenium.Extensions' to your solution and you are ready to go.
+Add the NuGet package 'Selenium.Extension.Collection' to your solution and you are ready to go.
 
 # Extensions
 There are extensions at different kind of levels available to use.
