@@ -11,12 +11,20 @@
         <button id="waitForElementToShowDelayTrigger">Wait for element to show</button> <span id="waitForElementToShowDelay" style="display: none">Content</span>
         <button id="waitForElementToShowTooLongDelayTrigger">Wait for element to show</button> <span id="waitForElementToShowTooLongDelay" style="display: none">Content</span>
         <button id="waitForElementToShowNoDelayTrigger">Wait for element to show</button> <span id="waitForElementToShowNoDelay" style="display: none">Content</span>
+
+        <button id="waitForElementToDisappearDelayTrigger">Wait for element to DDisappear</button> <span id="waitForElementToDisappearDelay" style="display: block">Content</span>
+        <button id="waitForElementToDisappearTooLongDelayTrigger">Wait for element to DDisappear</button> <span id="waitForElementToDisappearTooLongDelay" style="display: block">Content</span>
+        <button id="waitForElementToDisappearNoDelayTrigger">Wait for element to DDisappear</button> <span id="waitForElementToDisappearNoDelay" style="display: block">Content</span>
     </div>
 
 <script type="text/javascript">
     $("#waitForElementToShowDelayTrigger").click(() => setTimeout(() => $('#waitForElementToShowDelay').show(), 1000));
     $("#waitForElementToShowTooLongDelayTrigger").click(() => setTimeout(() => $('#waitForElementToShowTooLongDelay').show(), 3000));
     $("#waitForElementToShowNoDelayTrigger").click(() => $('#waitForElementToShowNoDelay').show());
+
+    $("#waitForElementToDisappearDelayTrigger").click(() => setTimeout(() => $('#waitForElementToDisappearDelay').hide(), 1000));
+    $("#waitForElementToDisappearTooLongDelayTrigger").click(() => setTimeout(() => $('#waitForElementToDisappearTooLongDelay').hide(), 3000));
+    $("#waitForElementToDisappearNoDelayTrigger").click(() => $('#waitForElementToDisappearNoDelay').hide());
 </script>
 </body>
 </html>

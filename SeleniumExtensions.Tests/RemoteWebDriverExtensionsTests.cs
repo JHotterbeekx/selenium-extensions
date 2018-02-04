@@ -49,6 +49,31 @@ namespace SeleniumExtensions.Tests {
       stopwatch.Start();
       _Driver.FindElementById("waitForElementToShowNoDelayTrigger").Click();
       _Driver.WaitForElementToShow(By.Id("waitForElementToShowNoDelay"));
+
+      stopwatch.Stop();
+      stopwatch.ElapsedMilliseconds.Should().BeLessOrEqualTo(200);
+    }
+
+    [Test]
+    public void WaitForElementToDisappear_ShouldWaitForElementToDisappear_WhenElementDisappearsWithDelay() {
+      _Driver.FindElementById("waitForElementToDisappearDelayTrigger").Click();
+      _Driver.WaitForElementToDisappear(By.Id("waitForElementToDisappearDelay"), 2);
+    }
+
+    [Test]
+    public void WaitForElementToDisappear_ShouldThrow_WhenElementTakesTooLongToDisappear() {
+      _Driver.FindElementById("waitForElementToDisappearTooLongDelayTrigger").Click();
+      Action action = () => _Driver.WaitForElementToDisappear(By.Id("waitForElementToDisappearTooLongDelay"), 2);
+      action.ShouldThrow<WebDriverTimeoutException>();
+    }
+
+    [Test]
+    public void WaitForElementToDisappear_ShouldNotWait_WhenElementInstantlyDisappears() {
+      var stopwatch = new Stopwatch();
+      stopwatch.Start();
+      _Driver.FindElementById("waitForElementToDisappearNoDelayTrigger").Click();
+      _Driver.WaitForElementToDisappear(By.Id("waitForElementToDisappearNoDelay"));
+
       stopwatch.Stop();
       stopwatch.ElapsedMilliseconds.Should().BeLessOrEqualTo(200);
     }

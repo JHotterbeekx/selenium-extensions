@@ -11,5 +11,10 @@ namespace SeleniumExtensions {
       return browser;
     }
 
+    public static RemoteWebDriver WaitForElementToDisappear(this RemoteWebDriver browser, By selector, int seconds = 2) {
+      new WebDriverWait(browser, TimeSpan.FromSeconds(seconds)).Until(ExpectedConditions.InvisibilityOfElementLocated(selector));
+      return browser;
+    }
+
   }
 }
