@@ -14,13 +14,13 @@ These extensions give extra functionality to the driver.
 # WaitForElementToShow
 This method waits for an element to be visible on your page. You can specify the timeout yourself, which defaults to 2 seconds.
 
-```c#
+```cs
 _Driver.WaitForElementToShow(By.Id("waitForElementToShowDelay"), 5); // The element should be visible within 5 seconds
 ```
 
 # WaitForElementToDisappear
 This method waits for an element to be gone from your page. You can specify the timeout yourself, which defaults to 2 seconds.
 
-```c#
+```cs
 _Driver.WaitForElementToDisappear(By.Id("waitForElementToDisappearDelay"), 5); // The element should be gone within 5 seconds
 ```
