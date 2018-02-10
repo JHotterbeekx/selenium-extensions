@@ -1,4 +1,12 @@
 language: csharp
 solution: SeleniumExtensions.sln
+before_install:
+ - sudo apt-get update
+ - sudo apt-get install chromium-chromedriver
+before_script:
+  - "export PATH=$PATH:/usr/lib/chromium-browser/"
+  - "export DISPLAY=:99.0"
+  - "sh -e /etc/init.d/xvfb start"
+  - sleep 3 # give xvfb some time to start
 install:
   - nuget restore SeleniumExtensions.sln
