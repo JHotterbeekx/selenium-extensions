@@ -40,7 +40,7 @@ namespace SeleniumExtensions.Tests {
     public void WaitForElementToShow_ShouldThrow_WhenElementTakesTooLongToShow() {
       _Driver.FindElementById("waitForElementToShowTooLongDelayTrigger").Click();
       Action action = () => _Driver.WaitForElementToShow(By.Id("waitForElementToShowTooLongDelay"), 2);
-      action.ShouldThrow<WebDriverTimeoutException>();
+      action.Should().Throw<WebDriverTimeoutException>();
     }
 
     [Test]
@@ -64,7 +64,7 @@ namespace SeleniumExtensions.Tests {
     public void WaitForElementToDisappear_ShouldThrow_WhenElementTakesTooLongToDisappear() {
       _Driver.FindElementById("waitForElementToDisappearTooLongDelayTrigger").Click();
       Action action = () => _Driver.WaitForElementToDisappear(By.Id("waitForElementToDisappearTooLongDelay"), 2);
-      action.ShouldThrow<WebDriverTimeoutException>();
+      action.Should().Throw<WebDriverTimeoutException>();
     }
 
     [Test]
